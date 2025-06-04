@@ -1,0 +1,16 @@
+runtime: python39
+entrypoint: gunicorn -b :$PORT main:app
+
+env_variables:
+    FIREBASE_API_KEY: "AIzaSyCMYBBlTFqSeFPBHhaJ8h1L81iG80LlNAM"
+    FIREBASE_AUTH_DOMAIN: "hello-e8906.firebaseapp.com"
+    FIREBASE_DATABASE_URL: "https://hello-e8906-default-rtdb.firebaseio.com"
+    FIREBASE_PROJECT_ID: "hello-e8906"
+    FIREBASE_STORAGE_BUCKET: "hello-e8906.firebasestorage.app"
+    FIREBASE_MESSAGING_SENDER_ID: "575960055142"
+    FIREBASE_APP_ID: "1:575960055142:web:d54c4b6db122ce8c3f9ca7"
+    FIREBASE_MEASUREMENT_ID: "G-VKGRNVHYV7"
+
+handlers:
+  - url: /
+    static_files: auth_firebase.html
